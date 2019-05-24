@@ -1,5 +1,12 @@
 {% extends "_layout" %}
 
 {% block content %}
-  {{craft.molecule.get("Button")}}
+
+  {{craft.molecule.get("Button", {
+    type: "anchor",
+    url: "#",
+    label: "My Button",
+    modifiers: [ "hvcentered" ]
+  })}}
+
 {% endblock %}
