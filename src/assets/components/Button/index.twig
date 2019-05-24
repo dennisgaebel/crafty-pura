@@ -1,1 +1,25 @@
-<button>Hello World</button>
+{#
+@description
+  Buttons that are global to the UI system. Any modifiers passed to this property must have them added to it's css file.
+@global props
+  label: "string",
+  modifiers : [ array to pass custom modifier classes ],
+  helpers : [ array to pass custom utility classes ]
+@anchor props
+  url: ""
+#}
+
+{% switch type %}
+  {% case "anchor" %}
+    <a href="{{url}}" class="pura-btn {% if modifiers is defined and modifiers %}pura-btn--{{modifiers | join(' pura-btn--')}}{% endif %}{% if helpers is defined and helpers %} {{helpers | join(' ')}}{% endif %}" role="button">
+      {{label}}
+    </a>
+
+  {% case "button" %}
+    <button class="pura-btn {% if modifiers is defined and modifiers %}pura-btn--{{modifiers | join(' pura-btn--')}}{% endif %}{% if helpers is defined and helpers %} {{helpers | join(' ')}}{% endif %}">
+      {{label}}
+    </button role="button">
+
+  {% case "submit" %}
+    <input type="{{type}}" class="pura-btn {% if modifiers is defined and modifiers %}pura-btn--{{modifiers | join(' pura-btn--')}}{% endif %}{% if helpers is defined and helpers %} {{helpers | join(' ')}}{% endif %}" value="{{label}}">
+{% endswitch %}
