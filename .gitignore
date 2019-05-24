@@ -35,7 +35,7 @@ dwsync.xml
 **/uploads/
 
 # Compiled directories
-src/_compiled
+src/public/_compiled/
 
 # Dotfiles
 .env
