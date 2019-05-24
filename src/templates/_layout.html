@@ -2,27 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+
+  {# Prefetch Assets : Speedy Baby! #}
+  {# https://3perf.com/blog/link-rels #}
+  {# More info: https://css-tricks.com/prefetching-preloading-prebrowsing #}
+	{# https://css-tricks.com/the-critical-request #}
+  <link rel="dns-prefetch" href="{{getenv('ASSETS_URL')}}">
+  <link rel="prefetch" href="{{getenv('ASSETS_URL')}}/main.css" as="style">
+  <link rel="preload" href="{{getenv('ASSETS_URL')}}/main.css" as="style">
+
   <title>Pura</title>
-  <link rel="stylesheet" href="http://localhost:3000/_compiled/main.css">
+
+  {# Styles #}
+  <link rel="stylesheet" href="{{getenv('ASSETS_URL')}}/main.css">
+
+  {# Stops the janky loading from WebPack #}
+    <style>
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+        }
+      }
+
+      html {
+        opacity: 0;
+        animation: fade-in 200ms cubic-bezier(0.57, 0.25, 0.65, 1) 400ms forwards;
+      }
+    </style>
 </head>
+
 <body>
-  <h1>Pura</h1>
-  <p>Looking for documentation and features? Head <a href="https://github.com/trendyminds/pura/">back to the GitHub repo</a>.</p>
 
-  <h2>Responsive images using Picturefill</h2>
-  {# <picture>
-    <source srcset="" media="(min-width: 450px)">
-    <img srcset="" alt="A test image">
-  </picture> #}
+  <main role="main">
+    {% block content %}{% endblock %}
+  </main>
 
-  {% block content %}{% endblock %}
-
-  <div data-my-module></div>
-  <div data-react-module></div>
-
-  <script src="http://localhost:3000/_compiled/runtime~main.js"></script>
-  <script src="http://localhost:3000/_compiled/vendors~main.js"></script>
-  <script src="http://localhost:3000/_compiled/main.js"></script>
+  {# Site Assets #}
+  <script src="{{getenv('ASSETS_URL')}}/runtime~main.js"></script>
+  <script src="{{getenv('ASSETS_URL')}}/vendors~main.js"></script>
+  <script src="{{getenv('ASSETS_URL')}}/main.js"></script>
 </body>
 </html>
