@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   entry: ["./src/assets/app.js"],
   output: {
-    path: path.resolve(__dirname, "../src/_compiled"),
+    path: path.resolve(__dirname, "../src/public/_compiled"),
     publicPath: "http://localhost:3000/_compiled/",
     filename: "[name].js"
   },
@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: "../src/_compiled"
+      cleanAfterEveryBuildPatterns: "../src/public/_compiled"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
