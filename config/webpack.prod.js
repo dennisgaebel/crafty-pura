@@ -24,12 +24,12 @@ module.exports = env => {
       new PostCompile(() => {
         new Version({
           assets: [
-            "./src/_compiled/main.css",
-            "./src/_compiled/main.js",
-            "./src/_compiled/vendors~main.js",
-            "./src/_compiled/runtime~main.js"
+            "./src/public/_compiled/main.css",
+            "./src/public/_compiled/main.js",
+            "./src/public/_compiled/vendors~main.js",
+            "./src/public/_compiled/runtime~main.js"
           ],
-          grepFiles: ["./src/index.html"]
+          grepFiles: ["./src/templates/_layout.html"]
         }).run();
       })
     ],
