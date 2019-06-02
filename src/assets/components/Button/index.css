@@ -1,16 +1,28 @@
 /*
-Button Component
-@description
+Buttons
 @description
 */
+$min: min-width;
 
 .pura-btn {
   display: flex;
   align-items: center;
+  margin: 1rem;
+  padding: 1rem;
   vertical-align: middle;
   width: 100%;
-  background: red;
   color: inherit;
+  text-decoration: none;
+
+  /* @mixin mq min, $min, 200px {
+    background: red;
+  } */
+
+  &--primary {
+    @mixin size 100%, 2.5em;
+    background: blue;
+    color: white;
+  }
 
   &--hvcentered {
     justify-content: center;

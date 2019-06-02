@@ -1,0 +1,40 @@
+{#
+@description
+general input for forms.
+@props
+for: "value"
+type: "text|search"
+modifiers : []
+helpers : []
+name: "value"
+required: true|false
+helpers : [ any classes desired are allowed ]
+#}
+<div class="cp-input {% if modifiers is defined and modifiers %}cp-input--{{modifiers | join(' cp-input--')}}{% endif %}{% if helpers is defined and helpers %} {{helpers | join(' ')}}{% endif %}">
+  <label for="{{for}}">
+    {{label}}
+    {% if required is defined and required == true %}
+      <span class="asterisk-required">*</span>
+    {% endif %}
+
+    {% if labelHint is defined and labelHint %}
+      <span class="cp-label-hint">{{labelHint}}</span>
+    {% endif %}
+  </label>
+  <input type="{{type}}"
+         name="{{name}}"
+         id="{{for}}"
+         {% if value is defined and value %}
+         value="{{value}}"
+         {% endif %}
+         {% if pattern is defined and type == 'tel' %}
+         pattern="{{pattern}}"
+         {% endif %}
+         {% if placeholder is defined and placeholder %}placeholder="{{placeholder}}"{% endif %} {% if required is defined and required == true %}required{% endif %}>
+
+  {% if hint is defined and hint %}
+    <div class="cp-form-hint">
+      <p>{{hint}}</p>
+    </div>
+  {% endif %}
+</div>
