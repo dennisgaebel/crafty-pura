@@ -1,12 +1,38 @@
 {% extends "_layout" %}
 
 {% block content %}
+  {# https://github.com/jonathantneal/postcss-advanced-variables #}
 
-  {{craft.molecule.get("Button", {
-    type: "anchor",
-    url: "#",
-    label: "My Button",
-    modifiers: [ "hvcentered" ]
-  })}}
+  <div class="wrapper">
+    {{craft.molecule.get("Button", {
+      type: "anchor",
+      url: "#",
+      label: "Primary Button Horizontally & Vertically Centered",
+      modifiers: [ "hvcentered" ]
+    })}}
 
+    {{craft.molecule.get("Button", {
+      type: "submit",
+      label: "Primary Button Horizontally & Vertically Centered",
+      modifiers: [ "spacebetween" ]
+    })}}
+
+    {{craft.molecule.get("Button", {
+      type: "button",
+      label: "My Button",
+      modifiers: [ "primary", "hvcentered" ]
+    })}}
+
+    {{craft.molecule.get("MaterialCard", {
+      modifiers: [ "level1", "default" ],
+      data: "<p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ea aut, dolorum delectus, atque voluptatum quos sapiente corrupti tempore porro saepe, illo facere cupiditate est quo! Quibusdam facilis error quasi?
+      </p>"
+    })}}
+
+    {{craft.molecule.get("ImageBanner", {
+      modifiers: ["flush-top-bottom"],
+      helpers: []
+    })}}
+  </div>
 {% endblock %}

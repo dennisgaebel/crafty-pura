@@ -1,15 +1,12 @@
 @import "normalize.css";
-@import "base/css/Variables";
-@import "base/css/Mixins";
-@import "base/css/Base";
-@import "base/css/Typography";
-@import "components/**";
 
-/**
- * Example CSS used on Pura demo page
- */
-body {
-  margin: 2rem auto;
-  max-width: 71.25rem;
-  width: 90%;
-}
+@import "base/css/variables";
+@import "base/css/mixins/**/*";
+
+@import "base/css/base";
+@import "base/css/typography/**/*";
+
+@import "base/css/layout/sticky-footer";
+
+@import "components/**";
+@import "utilities/**/*";
