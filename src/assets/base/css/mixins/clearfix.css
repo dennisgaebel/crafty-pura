@@ -1,11 +1,4 @@
 /**
- * Mixins
- *
- * These are top-level functions and re-usable styles that can be used
- *  in any partial
- */
-
-/**
  * Clearfix
  *
  * Example usage:
@@ -13,6 +6,7 @@
  *     @mixin clearfix;
  *   }
  */
+
 @define-mixin clearfix {
   &::after {
     clear: both;

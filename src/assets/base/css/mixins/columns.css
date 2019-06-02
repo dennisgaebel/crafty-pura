@@ -1,0 +1,25 @@
+@define-mixin column $numPerRow, $margin: null {
+  float: left;
+
+  @if ($margin) {
+    width: calc((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+
+    &:nth-child(n) {
+      margin-right: calc(($margin/100) * 1%);
+    }
+
+    &:nth-child(#{$numPerRow}n) {
+      margin-right: 0;
+    }
+  } @else {
+    width: calc((100% - (($numPerRow - 1) * 3%)) / $numPerRow);
+
+    &:nth-child(n) {
+      margin-right: 3%;
+    }
+
+    &:nth-child(#{$numPerRow}n) {
+      margin-right: 0;
+    }
+  }
+}

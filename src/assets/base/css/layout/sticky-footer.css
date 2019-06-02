@@ -1,0 +1,42 @@
+/*
+@name
+Flexbox Sticky Footer
+
+@url
+http://codepen.io/dennisgaebel/pen/LVvqOx
+*/
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header[role="banner"] {
+  flex: none;
+  height: 70px;
+  background: #ef4b37;
+  color: white;
+}
+
+main {
+  display: table;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  height: auto;
+  width: 100%;
+}
+
+footer[role="contentinfo"] {
+  align-items: center;
+  flex: none;
+  height: 40px;
+  vertical-align: middle;
+  background: #ff9d3c;
+}

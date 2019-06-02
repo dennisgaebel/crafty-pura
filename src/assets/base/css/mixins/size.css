@@ -1,0 +1,15 @@
+/*
+============================================================
+$Size
+Hugo Giraudel: http://sitepoint.com/sass-mixin-placeholder
+============================================================
+
+@demo
+@include size(32px);
+@include size(100%, 10em);
+*/
+
+@define-mixin size $width, $height: $width {
+  height: $height;
+  width: $width;
+}

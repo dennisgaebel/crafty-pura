@@ -1,0 +1,34 @@
+/*
+@name
+Flexible Cover Images
+
+@description
+http://nicolasgallagher.com/flexible-css-cover-images
+
+@info
+.pura-flexEmbed--3to1 { @mixin flexembed 33.33333%,  url(attr(data-image)), 600px, 600px; }
+.pura-flexEmbed--4to1 { @mixin flexembed 25%,  attr(data-image), 600px, 200px; }
+.pura-flexEmbed--16to9 { @mixin flexembed 56.25%,  attr(data-image), 600px, 600px; }
+*/
+
+@define-mixin flexembed $btm-padding, $bg-image, $max-width, $max-height {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  margin: 0 auto;
+  max-height: $max-height;
+  max-width: $max-width;
+
+  background-image: url($bg-image);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: $btm-padding;
+    width: 100%;
+  }
+}

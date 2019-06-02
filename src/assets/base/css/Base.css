@@ -5,10 +5,145 @@
  *  box-sizing, body background/font-family and more.
  */
 
-* {
+/*
+==========================================================================
+# Base styles: H5BP opinionated defaults
+==========================================================================
+*/
+
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+/* ::-moz-selection {
+  text-shadow: none;
+  background: $cp-selection-highlight-color;
+  color: white;
+}
+
+::selection {
+  text-shadow: none;
+  background: $cp-selection-highlight-color;
+  color: white;
+} */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/*
+==========================================================================
+# Custom Base Styles : General
+==========================================================================
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
 }
 
-img {
+html,
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+
+/* @include placeholder-styles {
+  color: $cp-placeholder-color;
+} */
+
+img,
+embed,
+object,
+video {
   max-width: 100%;
+  height: auto;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  height: auto;
+  /* max-width: 100%; */
+  width: 100%;
+}
+
+a {
+  /* color: $cp-global-link-color; */
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    /* color: $cp-global-link-hover-color; */
+    text-decoration: none;
+  }
+}
+
+/*
+==========================================================================
+# Forms & Inputs
+==========================================================================
+*/
+
+label {
+  display: block;
+}
+
+button,
+input[type="submit"] {
+  appearance: none;
+  border: none;
+  outline: 0;
+  width: 100%;
+}
+
+input:not([type="submit"]),
+textarea {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+input:required:focus:valid,
+input:required:valid,
+textarea:required:focus:valid,
+textarea:required:valid {
+  background: white;
 }
