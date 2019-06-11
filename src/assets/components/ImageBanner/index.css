@@ -1,13 +1,11 @@
 .pura-hero {
-  margin-left: -50vw;
-  margin-right: -50vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  width: 100vw;
   background-color: black;
 
   /* ========== MODIFIERS ============== */
+
+  &--default {
+    width: 100%;
+  }
 
   &--flush-top-bottom {
     margin-top: 0;
@@ -20,6 +18,15 @@
 
   &--flush-bottom {
     margin-bottom: 0;
+  }
+
+  &--full-width {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
   }
 
   /* ========== BACKGROUND IMAGE ============== */
