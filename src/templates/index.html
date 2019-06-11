@@ -4,6 +4,8 @@
   {# https://github.com/jonathantneal/postcss-advanced-variables #}
 
   <div class="wrapper">
+    {{craft.molecule.get("EqualHeightCard")}}
+
     {{craft.molecule.get("Button", {
       type: "anchor",
       url: "#",
@@ -12,9 +14,10 @@
     })}}
 
     {{craft.molecule.get("Button", {
-      type: "submit",
-      label: "Primary Button Horizontally & Vertically Centered",
-      modifiers: [ "spacebetween" ]
+      type: "button",
+      url: "#",
+      label: "Primary Button Space between" ~ craft.molecule.icon("arrow-right"),
+      modifiers: [ "space-between" ]
     })}}
 
     {{craft.molecule.get("Button", {
@@ -31,7 +34,12 @@
     })}}
 
     {{craft.molecule.get("ImageBanner", {
-      modifiers: ["flush-top-bottom"],
+      modifiers: ["default"],
+      helpers: []
+    })}}
+
+    {{craft.molecule.get("ImageBanner", {
+      modifiers: ["flush-top-bottom", "full-width"],
       helpers: []
     })}}
   </div>
