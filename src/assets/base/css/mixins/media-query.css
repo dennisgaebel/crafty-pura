@@ -13,6 +13,8 @@
 // @include mq([min, max, minmax, landscape-device, maxheight, null], [pixel_value [,pixel_value]]) {}
 */
 
+$min: min-width;
+
 @define-mixin mq $constraint, $viewport1, $viewport2: null {
   @if $constraint == min {
     @media screen and ($min: $viewport1) {
