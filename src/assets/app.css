@@ -1,12 +1,13 @@
 @import "normalize.css";
 
-@import "base/css/variables";
 @import "base/css/mixins/**/*";
+@import "base/css/variables";
 
 @import "base/css/base";
 @import "base/css/typography/**/*";
 
 @import "base/css/layout/sticky-footer";
+@import "base/css/patterns/equal-height";
 
 @import "components/**";
 @import "utilities/**/*";
