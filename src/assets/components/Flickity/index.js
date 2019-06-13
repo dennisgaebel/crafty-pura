@@ -3,16 +3,14 @@ import "flickity-imagesloaded";
 
 export default class Carousel {
   constructor() {
-    // this.trigger = document.querySelector("[data-trigger]");
-    // this.events();
-
     this.slider = document.querySelector("[data-carousel]");
-    const $counter = $(".gallery-counter")[0];
+    const $counter = $(".carousel-counter")[0];
 
     this.flickity = new Flickity(this.slider, {
       adaptiveHeight: true,
       wrapAround: true,
       imagesLoaded: true,
+      pageDots: false,
       lazyLoad: 1
     });
 
@@ -28,9 +26,4 @@ export default class Carousel {
       $counter.innerHTML = `${this.selectedIndex + 1} of ${this.cells.length}`;
     });
   }
-
-  // events() {
-  //   this.trigger.addEventListener("click", this.myFunction.bind(this));
-  // }
-  // myFunction() {}
 }
