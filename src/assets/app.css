@@ -1,13 +1,12 @@
-@import "normalize.css";
+/* 3rd Party Plugins */
+@import "../../node_modules/flickity/dist/flickity.min.css";
 
+@import "normalize.css";
 @import "base/css/mixins/**/*";
 @import "base/css/variables";
-
 @import "base/css/base";
 @import "base/css/typography/**/*";
-
-@import "base/css/layout/sticky-footer";
-@import "base/css/patterns/equal-height";
-
+@import "base/css/layout/**/*";
+@import "base/css/patterns/**/*";
 @import "components/**";
 @import "utilities/**/*";
