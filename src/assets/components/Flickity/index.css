@@ -1,5 +1,5 @@
 .pura-carousel {
-  .gallery-cell {
+  .carousel-cell {
     width: 100%;
   }
 
@@ -20,6 +20,5 @@
   }
   /* stylelint-enable */
 
-  .carousel-counter {
-  }
+  /* .carousel-counter {} */
 }
