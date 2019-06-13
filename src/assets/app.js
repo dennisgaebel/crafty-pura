@@ -8,6 +8,9 @@ import ReactModule from "./components/ReactModule";
 import MyModule from "./components/MyModule";
 import "./app.css";
 import Carousel from "./components/Flickity";
+import MatchMedia from "./components/MatchMedia";
+
+new MatchMedia();
 
 if ($("[data-my-module]").length) {
   new MyModule();
