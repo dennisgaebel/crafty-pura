@@ -1,2 +1,25 @@
-.class {
+.pura-carousel {
+  .gallery-cell {
+    width: 100%;
+  }
+
+  .carousel-cell {
+    margin-right: 10px;
+    width: 50%;
+  }
+
+  .carousel-cell img {
+    transition: opacity 0.4s;
+    opacity: 0;
+  }
+
+  /* stylelint-disable */
+  .carousel-cell img.flickity-lazyloaded,
+  .carousel-cell img.flickity-lazyerror {
+    opacity: 1;
+  }
+  /* stylelint-enable */
+
+  .carousel-counter {
+  }
 }

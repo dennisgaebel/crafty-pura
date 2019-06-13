@@ -7,9 +7,14 @@ import "./base/js/Bling";
 import ReactModule from "./components/ReactModule";
 import MyModule from "./components/MyModule";
 import "./app.css";
+import Carousel from "./components/Flickity";
 
 if ($("[data-my-module]").length) {
   new MyModule();
+}
+
+if ($("[data-carousel]").length) {
+  new Carousel();
 }
 
 if ($("[data-react-module]").length) {

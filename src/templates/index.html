@@ -4,6 +4,18 @@
   {# https://github.com/jonathantneal/postcss-advanced-variables #}
 
   <div class="wrapper">
+    {{craft.molecule.get("Flickity", {
+      galleryCounter: true,
+      urls: [
+        "https://via.placeholder.com/600/0000ff/ffffff",
+        "https://via.placeholder.com/600/0000ff/ffffff",
+        "https://via.placeholder.com/600/0000ff/ffffff",
+        "https://via.placeholder.com/600/0000ff/ffffff",
+        "https://via.placeholder.com/600/0000ff/ffffff",
+        "https://via.placeholder.com/600/0000ff/ffffff"
+      ]
+    })}}
+
     {{craft.molecule.get("EqualHeightCard")}}
 
     {{craft.molecule.get("Button", {
