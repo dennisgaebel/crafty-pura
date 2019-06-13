@@ -66,6 +66,8 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "flickity": "^2.2.0",
+    "flickity-imagesloaded": "^2.0.0",
     "install": "^0.12.2",
     "normalize.css": "^8.0.1",
     "npm": "^6.9.0",
