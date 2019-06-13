@@ -1,11 +1,13 @@
 {% extends "_layout" %}
 
 {% block content %}
-  {# https://github.com/jonathantneal/postcss-advanced-variables #}
-
   <div class="wrapper">
+    {{craft.molecule.get("ImageBanner", {
+      modifiers: ["flush-top-bottom", "full-width"],
+      helpers: []
+    })}}
+
     {{craft.molecule.get("Flickity", {
-      galleryCounter: true,
       urls: [
         "https://via.placeholder.com/600/0000ff/ffffff",
         "https://via.placeholder.com/600/0000ff/ffffff",
@@ -14,45 +16,6 @@
         "https://via.placeholder.com/600/0000ff/ffffff",
         "https://via.placeholder.com/600/0000ff/ffffff"
       ]
-    })}}
-
-    {{craft.molecule.get("EqualHeightCard")}}
-
-    {{craft.molecule.get("Button", {
-      type: "anchor",
-      url: "#",
-      label: "Primary Button Horizontally & Vertically Centered",
-      modifiers: [ "hvcentered" ]
-    })}}
-
-    {{craft.molecule.get("Button", {
-      type: "button",
-      url: "#",
-      label: "Primary Button Space between" ~ craft.molecule.icon("arrow-right"),
-      modifiers: [ "space-between" ]
-    })}}
-
-    {{craft.molecule.get("Button", {
-      type: "button",
-      label: "My Button",
-      modifiers: [ "primary", "hvcentered" ]
-    })}}
-
-    {{craft.molecule.get("MaterialCard", {
-      modifiers: [ "level1", "default" ],
-      data: "<p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ea aut, dolorum delectus, atque voluptatum quos sapiente corrupti tempore porro saepe, illo facere cupiditate est quo! Quibusdam facilis error quasi?
-      </p>"
-    })}}
-
-    {{craft.molecule.get("ImageBanner", {
-      modifiers: ["default"],
-      helpers: []
-    })}}
-
-    {{craft.molecule.get("ImageBanner", {
-      modifiers: ["flush-top-bottom", "full-width"],
-      helpers: []
     })}}
   </div>
 {% endblock %}
